@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applied Optics Master Learning Portal | Department of Physics, S.V.A. Govt. Degree College, Srikalahasti</title>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Academic Theme & Optics Tools Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/optics-tools.css">
+
+  <!-- KaTeX Mathematics Rendering Engine (Local Offline with CDN Fallback) -->
+  <link rel="stylesheet" href="katex/katex.min.css" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';">
+  <script src="katex/katex.min.js"></script>
+  <script>
+    if (!window.katex) {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"><\/script>');
+    }
+  </script>
+  <script src="katex/contrib/auto-render.min.js"></script>
+  <script>
+    if (!window.renderMathInElement) {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"><\/script>');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Top Reading Progress Indicator -->
+  <div id="read-progress-bar"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <button class="menu-toggle-btn" id="menu-toggle-btn" onclick="window.NavigationTracker.toggleMobileSidebar()" aria-label="Toggle Curriculum Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <a href="#optics-intro" class="brand-badge">
+        <div class="brand-logo-icon" style="background: linear-gradient(135deg, #0284c7, #7c3aed);">
+          <i class="fa-solid fa-atom"></i>
+        </div>
+        <div class="brand-title-group">
+          <h1>S.V.A. GOVT. DEGREE COLLEGE, SRIKALAHASTI</h1>
+          <p>Department of Physics &bull; Course 7: Applied Optics (Sem-III)</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Quick Track Switcher Pills -->
+    <nav class="track-switcher" aria-label="Curriculum Tracks">
+      <a href="#optics-intro" class="track-pill active" data-track="track-unit1">Unit 1: Geometrical Optics</a>
+      <a href="#fresnel-reflection-refraction" class="track-pill" data-track="track-unit2">Unit 2: Aberrations</a>
+      <a href="#laser-fundamentals-coherence" class="track-pill" data-track="track-unit3">Unit 3: Lasers</a>
+      <a href="#optical-fiber-fundamentals-tir" class="track-pill" data-track="track-unit4">Unit 4: Fibers &amp; Holography</a>
+      <a href="#compound-microscope" class="track-pill" data-track="track-unit5">Unit 5: Instruments</a>
+      <a href="#lab-01-laser-wavelength-grating" class="track-pill" data-track="track-practicals" style="background: rgba(16, 185, 129, 0.1); border-color: var(--accent-emerald); color: var(--accent-emerald);">
+        <i class="fa-solid fa-flask-vial"></i> 16 Practical Labs
+      </a>
+    </nav>
+
+    <div class="header-right">
+      <!-- Course Switcher Link to Python Master Portal -->
+      <a href="../Python-SVAGDC/index.html" class="tool-btn" style="text-decoration: none; font-size: 0.78rem; font-weight: 700; color: #3b82f6; border-color: #3b82f6; display: inline-flex; align-items: center; gap: 0.35rem;" title="Switch to Python Master Portal">
+        <i class="fa-brands fa-python"></i> Python
+      </a>
+
+      <!-- Course Switcher Link to Computer Fundamentals Portal -->
+      <a href="../Computer-Fund-OfficeAutomat-SVAGDC/index.html" class="tool-btn" style="text-decoration: none; font-size: 0.78rem; font-weight: 700; color: #0284c7; border-color: #0284c7; display: inline-flex; align-items: center; gap: 0.35rem;" title="Switch to Computer Fundamentals & Office Automation Portal">
+        <i class="fa-solid fa-laptop-code"></i> Comp Fund
+      </a>
+
+            <!-- Course Switcher Link to Digital Marketing Portal -->
+      <a href="../Digital-Marketing-SVGDC/index.html" class="tool-btn" style="text-decoration: none; font-size: 0.78rem; font-weight: 700; color: #ea580c; border-color: #ea580c; display: inline-flex; align-items: center; gap: 0.35rem;" title="Switch to Digital Marketing Portal">
+        <i class="fa-solid fa-bullhorn"></i> Digital Mktg
+      </a>
+
+      <!-- Course Switcher Link to Electronic Instrumentation Portal -->
+      <a href="../Sem5-Electronic-Instrumentation-Minor-2026-wef2023-24/index.html" class="tool-btn" style="text-decoration: none; font-size: 0.78rem; font-weight: 700; color: #10b981; border-color: #10b981; display: inline-flex; align-items: center; gap: 0.35rem;" title="Switch to Electronic Instrumentation Portal">
+        <i class="fa-solid fa-bolt-lightning"></i> Instrumentation
+      </a>
+
+      <!-- YouTube Channel Promotion -->
+      <a href="https://www.youtube.com/@TheCompetitiveEdge-b4z" target="_blank" rel="noopener noreferrer" class="yt-promo-btn" title="Visit our Official YouTube Channel: The Competitive Edge (S.V.A. Govt. Degree College, Srikalahasti)" aria-label="Visit The Competitive Edge Official YouTube Channel">
+        <img src="Logo-TheCompetitiveEdge.jpg" alt="The Competitive Edge" class="yt-promo-logo">
+        <div class="yt-text-box">
+          <span class="yt-channel-label"><i class="fa-brands fa-youtube yt-red-icon"></i> Official Channel</span>
+          <span class="yt-channel-name">The Competitive Edge</span>
+        </div>
+        <span class="yt-subscribe-badge" title="Watch on YouTube">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </span>
+      </a>
+
+      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main App Layout Container -->
+  <div class="app-container">
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="window.NavigationTracker.closeMobileSidebar()"></div>
+
+    <!-- Floating Expand Button for Desktop when Sidebar is Collapsed -->
+    <button class="sidebar-floating-toggle" id="sidebar-floating-toggle" title="Show Curriculum Menu">
+      <i class="fa-solid fa-bars"></i>
+      <span>Curriculum Menu</span>
+    </button>
+
+    <!-- Collapsible & Resizable Sidebar Navigation -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <!-- Sidebar Width Adjustment Toolbar -->
+      <div class="sidebar-width-toolbar">
+        <div class="width-presets-group" title="Quick Width Presets">
+          <span class="width-label"><i class="fa-solid fa-arrows-left-right"></i> Width:</span>
+          <button type="button" class="btn-width-preset" data-width="210" title="Narrow Sidebar (210px)">Narrow</button>
+          <button type="button" class="btn-width-preset active" data-width="280" title="Default Sidebar (280px)">Default</button>
+          <button type="button" class="btn-width-preset" data-width="360" title="Broad Sidebar (360px)">Broad</button>
+        </div>
+        <button type="button" class="btn-sidebar-collapse" id="sidebar-collapse-btn" title="Collapse Sidebar Menu">
+          <i class="fa-solid fa-angles-left"></i>
+        </button>
+      </div>
+
+      <!-- Quick Search Filter in Sidebar -->
+      <div class="sidebar-search-box">
+        <div class="sidebar-input-wrapper">
+          <i class="fa-solid fa-filter"></i>
+          <input type="text" class="sidebar-search-input" id="sidebar-search-input" placeholder="Filter optics topics..." autocomplete="off">
+          <kbd class="sidebar-search-kbd">Ctrl K</kbd>
+        </div>
+      </div>
+
+      <!-- Curriculum Accordion Tree Mount -->
+      <nav class="curriculum-tree" id="curriculum-tree" aria-label="Curriculum Navigation"></nav>
+    </aside>
+
+    <!-- Draggable Sidebar Resizer Handle -->
+    <div class="sidebar-resizer" id="sidebar-resizer" title="Drag to adjust sidebar width (Double-click to reset)"></div>
+
+    <!-- Reading & Interactive Main Pane -->
+    <main class="app-main" id="app-main">
+      <div class="content-wrapper" id="topic-content-mount">
+        <!-- Dynamic Topic Content Injected via app.js -->
+        <div style="padding: 3rem 1rem; text-align: center; color: var(--text-muted);">
+          <i class="fa-solid fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);"></i>
+          <p>Loading Applied Optics modules...</p>
+        </div>
+      </div>
+
+      <!-- YouTube Channel Promotion Banner -->
+      <section class="bottom-yt-promo-container" aria-label="Official YouTube Channel Promotion">
+        <div class="bottom-yt-card">
+          <div class="bottom-yt-left">
+            <img src="Logo-TheCompetitiveEdge.jpg" alt="The Competitive Edge Crest Logo" class="bottom-yt-crest">
+          </div>
+          <div class="bottom-yt-body">
+            <div class="bottom-yt-badge">
+              <i class="fa-brands fa-youtube"></i> OFFICIAL YOUTUBE CHANNEL
+            </div>
+            <h2 class="bottom-yt-title">The Competitive Edge</h2>
+            <p class="bottom-yt-subtitle">
+              Department of Physics &bull; S.V.A. Govt. Degree College, Srikalahasti
+            </p>
+            <div class="bottom-yt-desc">
+              <p>
+                <strong>Welcome to The Competitive Edge</strong> &mdash; your one-stop academic destination for smart and effective competitive exam preparation! 🎯
+              </p>
+              <p>
+                A comprehensive educational platform for degree physics scholars and competitive aspirants. We provide high-quality video masterclasses in Optics, Modern Physics, Quantitative Aptitude, Reasoning, and General Science.
+              </p>
+              
+              <div class="bottom-yt-features-title">
+                📚 What you’ll find on this channel:
+              </div>
+              <ul class="bottom-yt-grid">
+                <li><span>🔬</span> Applied Optics &amp; Wave Optics Video Lectures</li>
+                <li><span>⚡</span> Quantum Mechanics &amp; Modern Physics</li>
+                <li><span>📰</span> Daily Current Affairs &amp; Quizzes</li>
+                <li><span>🔢</span> Quantitative Aptitude &amp; Arithmetic</li>
+                <li><span>🧠</span> Reasoning &ndash; Verbal &amp; Non-Verbal</li>
+                <li><span>💻</span> Python Programming &amp; Computer Fundamentals</li>
+                <li><span>🎯</span> Lab Demonstrations &amp; Viva Voce Preparation</li>
+                <li><span>💡</span> Exam Strategies, Tips &amp; Shortcuts</li>
+              </ul>
+
+              <div class="bottom-yt-target-exams">
+                Tailored for scholars preparing for CSIR-NET Physical Sciences, GATE Physics, IIT-JAM, UPSC, APPSC/TSPSC Degree Lecturers, SSC CGL, and university examinations.
+              </div>
+            </div>
+            <div class="bottom-yt-actions">
+              <a href="https://www.youtube.com/@TheCompetitiveEdge-b4z" target="_blank" rel="noopener noreferrer" class="btn-yt-big-subscribe" title="Subscribe to The Competitive Edge on YouTube">
+                <i class="fa-brands fa-youtube"></i> Subscribe &amp; Watch Lectures <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <span class="bottom-yt-stat"><i class="fa-solid fa-circle-check"></i> Free Academic Lectures &amp; Competitive Exam Prep</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-dept-badge">DEPARTMENT OF PHYSICS</div>
+        <p>S.V.A. Govt. Degree College, Srikalahasti, Tirupati District, Andhra Pradesh</p>
+        <p style="margin-top: 0.35rem; font-size: 0.76rem; color: var(--text-muted);">
+          Semester-III &bull; Course 7: Applied Optics (Physics Major) &bull; Live Interactive Master Portal
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Global Fast Search Modal (Ctrl+K) -->
+  <div class="search-modal-backdrop" id="search-modal-backdrop">
+    <div class="search-modal">
+      <div class="search-modal-header">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-modal-input" id="search-modal-input" placeholder="Search Fermat's principle, ABCD matrices, aberrations, lasers, optical fibers, microscopes..." autocomplete="off">
+        <button class="search-modal-close" id="search-modal-close" aria-label="Close search modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="search-results-list" id="search-results-list"></ul>
+    </div>
+  </div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/curriculum_data.js"></script>
+  <script src="js/optics_matrix_bench.js"></script>
+  <script src="js/optics_simulators.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
